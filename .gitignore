@@ -12,3 +12,4 @@ data/
 # 真实环境变量与密钥
 .env*
 deploy/env
+scripts/local.env
