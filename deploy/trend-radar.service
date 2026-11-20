@@ -1,0 +1,17 @@
+[Unit]
+Description=trend-radar 出海热点雷达
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/trend-radar/app
+EnvironmentFile=/opt/trend-radar/app/deploy/env
+ExecStart=/usr/bin/node --disable-warning=ExperimentalWarning server.js
+Restart=always
+RestartSec=5
+# 数据目录可另行指向 /opt/trend-radar/data(env 里 TREND_RADAR_DATA_DIR 控制)
+StandardOutput=append:/opt/trend-radar/logs/app.log
+StandardError=append:/opt/trend-radar/logs/app.err.log
+
+[Install]
+WantedBy=multi-user.target

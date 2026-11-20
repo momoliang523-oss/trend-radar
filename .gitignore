@@ -1,0 +1,14 @@
+node_modules/
+data/
+*.log
+.DS_Store
+
+# 本地数据库与运行时数据
+*.db
+*.db-*
+*.db-wal
+*.db-shm
+
+# 真实环境变量与密钥
+.env*
+deploy/env

@@ -1,0 +1,14 @@
+# Caddy 反代配置:放到服务器 /etc/caddy/Caddyfile,然后 systemctl reload caddy
+# 有域名:把下面两处 IP 换成域名,Caddy 自动签发 HTTPS 证书(需域名 A 记录已指向本机)
+
+# 无域名(内部测试,明文 HTTP):
+:80 {
+	encode gzip
+	reverse_proxy 127.0.0.1:8124
+}
+
+# 有域名(上线正式用):
+# 你的域名.com {
+# 	encode gzip
+# 	reverse_proxy 127.0.0.1:8124
+# }

@@ -1,0 +1,16 @@
+{
+  "name": "trend-radar",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "出海热点雷达 · 智能市场调研分析师(日历化海外热点聚合 + AI 一键延伸)",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "seed": "node --disable-warning=ExperimentalWarning server/seed.js",
+    "collect": "node --disable-warning=ExperimentalWarning server/collectors/index.js",
+    "smoke": "node --disable-warning=ExperimentalWarning server/llm.js --smoke"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
